@@ -47,3 +47,12 @@ None! Just include the jar or source code in your project.
 # jCAW Documentation
 
 [Read More Here](Documentation.md)
+
+Status: 
+
+* Lib Complete.
+
+todo: 
+
+* None - until bugs/issues are found.
+
