@@ -15,8 +15,12 @@ Copyright [2012] [Jacob Prather]
    limitations under the License.
 */
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -238,7 +242,7 @@ public class ConfluenceService {
         return null;
     }
 
-    private String getBasicAuthString() {
+    public String getBasicAuthString() {
         if (checkInput(_username) && checkInput(_password)) {
             return String.format("?os_username=%s&os_password=%s", _username, _password);
         }
@@ -246,6 +250,27 @@ public class ConfluenceService {
         System.out.println("Both Username And Password must be specified. [GBAS]");
         return null;
     }
+    
+    //Added for important function that is not available via JSON-RPC api, but is via REST prototype API
+	public String getPageContent(ConfluenceService service, String pageId) throws IOException{
+		if(checkAllCSData() && service != null && pageId != null){
+			String function = "/content/";
+			String restAPIgetContent = _csLocation + REST + function + pageId + getBasicAuthString();
+			String result = "";
+			
+	        URL yahoo = new URL(restAPIgetContent);
+	        URLConnection yc = yahoo.openConnection();
+	        BufferedReader in = new BufferedReader(new InputStreamReader(
+	                yc.getInputStream(), "UTF-8"));
+	        String inputLine;
+	        StringBuilder a = new StringBuilder();
+	        while ((inputLine = in.readLine()) != null)
+	            a.append(inputLine);
+	        in.close();
+			result=a.toString();
+			return result;
+		}else{return "Error [gPC]";}
+	}
 
     private boolean checkInput(String x) {
         return x != null && x.length() > 0;
@@ -266,4 +291,5 @@ public class ConfluenceService {
     // Constants
     private final String VERSION1 = "/rpc/json-rpc/confluenceservice-v1";
     private final String VERSION2 = "/rpc/json-rpc/confluenceservice-v2";
+    private final String REST = "/rest/prototype/1";
 }
