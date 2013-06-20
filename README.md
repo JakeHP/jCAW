@@ -6,6 +6,11 @@ Interacting with Confluence's JSON API can be a hassle.
 
 jCAW, JSON-Confluence API Wrapper, enables a developer to easily and gracefully interact with any Confluence JSON API.
 
+# Install
+
+        go to the dist folder and download the jCAW1.3.jar. Use it as a library in your project.
+        
+
 # Example Code / Hello World
 
 
@@ -23,18 +28,21 @@ jCAW, JSON-Confluence API Wrapper, enables a developer to easily and gracefully 
         List<Object> parameters = new LinkedList<Object>();
         parameters.add("xyz");
         
-        //Request & Recieve, a List of HashMaps.
-        List<HashMap<String, String>> responseData;
-        responseData = myService.requestList("methodName", parameters);
+        //Uncomment one of the following
+             //Request & Recieve, a List of HashMaps.
+             //List<HashMap<String, String>> responseData;
+             //responseData = myService.requestList("methodName", parameters);
 
-        //Another Way To Request & Recieve, a JSONArray, Using this request method is much more stable.
-        //JSONArray responseData;
-        //responseData = myService.requestJArray("methodName", parameters);
+             //Another Way To Request & Recieve, a JSONArray, Using this request method is much more stable.
+             //JSONArray responseData;
+             //responseData = myService.requestJArray("methodName", parameters);
 
         //Example / Print The Response
-        int z=0;
-        for(z=0;z<responseData.size();++z) {
-           System.out.println(responseData.get(z).toString());
+        if(responseData!=null){
+             int z=0;
+             for(z=0;z<responseData.size();++z) {
+                System.out.println(responseData.get(z).toString());
+             }
         }
 
 ```
@@ -44,9 +52,6 @@ jCAW, JSON-Confluence API Wrapper, enables a developer to easily and gracefully 
 
 None! Just include the jar or source code in your project.
 
-# jCAW Documentation
-
-[Read More Here](Documentation.md)
 
 Status: 
 
