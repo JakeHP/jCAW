@@ -52,6 +52,11 @@ jCAW, JSON-Confluence API Wrapper, enables a developer to easily and gracefully 
 
 None! Just include the jar or source code in your project.
 
+# License
+
+MIT: http://opensource.org/licenses/MIT
+
+# Other
 
 Status: 
 
