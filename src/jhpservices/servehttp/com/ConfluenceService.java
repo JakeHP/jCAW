@@ -251,8 +251,8 @@ public class ConfluenceService {
         return null;
     }
     
-    //Added for important function that is not available via JSON-RPC api, but is via REST prototype API
-	public String getPageContent(ConfluenceService service, String pageId) throws IOException{
+    //get page content via REST prototype API
+    public String getPageContent(ConfluenceService service, String pageId) throws IOException{
 		if(checkAllCSData() && service != null && pageId != null){
 			String function = "/content/";
 			String restAPIgetContent = _csLocation + REST + function + pageId + getBasicAuthString();
@@ -270,7 +270,7 @@ public class ConfluenceService {
 			result=a.toString();
 			return result;
 		}else{return "Error [gPC]";}
-	}
+    }
 
     private boolean checkInput(String x) {
         return x != null && x.length() > 0;
