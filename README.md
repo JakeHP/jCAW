@@ -4,7 +4,7 @@ Interacting with Confluence's JSON API can be a hassle.
 
 # The Solution
 
-jCAW, JSON-Confluence API Wrapper, enables a developer to easily and gracefully interact with any Confluence JSON API.
+jCAW, JSON-Confluence API Wrapper, makes working with Confluence's JSON API straight forward and easy to implement.
 
 # Install
 
