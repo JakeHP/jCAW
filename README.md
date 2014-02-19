@@ -1,6 +1,6 @@
 # The Problem
 
-Interacting with Confluence's JSON API can be a hassle.
+Interacting with Confluence's JSON-RPC API can be a hassle.
 
 # The Solution
 
