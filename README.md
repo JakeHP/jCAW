@@ -61,5 +61,5 @@ Status:
 
 todo: 
 
-* None - until bugs/issues are found.
+* update authentication method (from os_username/os_password to basic auth)
 
