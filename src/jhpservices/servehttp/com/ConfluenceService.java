@@ -215,6 +215,7 @@ public class ConfluenceService {
          switch (version) {
             case 1:
             case 2:
+            case 9:
                 _version = version;
                 return true;
             default:
@@ -230,6 +231,7 @@ public class ConfluenceService {
             switch (_version) {
                 case 1 : versionString = VERSION1; break;
                 case 2 : versionString = VERSION2; break;
+                case 9 : versionString = JVERSION2; break;
                 default :
                     System.out.println("No Version Set. [GBCSL]");
                     return null;
@@ -277,7 +279,7 @@ public class ConfluenceService {
     }
 
     private boolean checkAllCSData() {
-        return checkInput(_csLocation) && checkInput(_username) && checkInput(_password) && (_version == 1 || _version == 2);
+        return checkInput(_csLocation) && checkInput(_username) && checkInput(_password) && (_version == 1 || _version == 2 || _version == 9);
     }
 
     //ConfluenceService data
@@ -289,6 +291,7 @@ public class ConfluenceService {
     private JSONRPC2Session _csSession;
 
     // Constants
+    private final String JVERSION2 = "/rpc/json-rpc/jirasoapservice-v2";
     private final String VERSION1 = "/rpc/json-rpc/confluenceservice-v1";
     private final String VERSION2 = "/rpc/json-rpc/confluenceservice-v2";
     private final String REST = "/rest/prototype/1";

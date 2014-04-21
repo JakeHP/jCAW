@@ -8,7 +8,7 @@ jCAW, JSON-Confluence API Wrapper, makes working with Confluence's JSON API stra
 
 # Install
 
-        go to the dist folder and download the jCAW1.3.jar. Use it as a library in your project.
+        go to the dist folder and download the jCAW1.4.jar. Use it as a library in your project.
         
 
 # Example Code / Hello World
@@ -19,7 +19,7 @@ jCAW, JSON-Confluence API Wrapper, makes working with Confluence's JSON API stra
         ConfluenceService myService = new ConfluenceService();
         myService.setBaseURL("https://confluenceServiceDomain.com");
         myService.setLoginToken("jprather", "qwerty");
-        myService.setAPIVersion(1);    
+        myService.setAPIVersion(1);    //myService.setAPIVersion(9) for jira
         myService.connect();
         
         // Building the parameters for the request
@@ -58,6 +58,7 @@ MIT: http://opensource.org/licenses/MIT
 Status: 
 
 * Lib Complete.
+* Added experimental jira support
 
 todo: 
 
