@@ -43,7 +43,8 @@ jCAW, JSON-Confluence API Wrapper, makes working with Confluence's JSON API stra
         }
 
 ```
-
+Methods
+https://developer.atlassian.com/display/CONFDEV/Remote+Confluence+Methods
 
 # Dependencies
 
